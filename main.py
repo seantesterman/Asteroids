@@ -53,6 +53,10 @@ def main():
             if ast.CollisionCheck(player):
                 print("Game over!")
                 sys.exit()
+            for shot in shots:
+                if shot.CollisionCheck(ast):
+                    shot.kill()
+                    ast.kill()
          
         pygame.display.flip()  
         
