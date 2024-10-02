@@ -1,7 +1,6 @@
 import pygame
 from constants import *
-from circleshape import *
-from player import *
+from player import Player
 
 def main():
     pygame.init()
@@ -18,6 +17,9 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
+        # Rotate
+        player.update(dt)
+        
         # Screen
         screen.fill("black")
         player.draw(screen)
@@ -25,6 +27,8 @@ def main():
 
         # Frame Rate
         dt = clock.tick(60) / 1000
+
+
         
 
 
